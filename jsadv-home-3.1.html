@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+<!-- Создайте счетчик секунд, который начинает отчет с 1 и заканчивается на 30,
+также добавьте кнопки которые останавливают отчет, и запускают его заново и добавьте кнопку
+обнуляющую отcчет. Также попробуйте изменить код так чтобы отчет начинался с 30 и заканчивался на 1. -->
+<p id="demo"></p>
+
+   <button onclick="myStopFunction()">Остановить время</button>
+   <button onclick="myClearFunction()">Таймер заново</button>
+   <script>
+    // счет от 1 до 30
+    var count = 1;
+    var setTime;
+    var myTimer =  document.getElementById("demo");
+    function myTimeoutFunction(){
+        myTimer.innerHTML = count++;
+        setTime = setTimeout(myTimeoutFunction, 1000);
+        if (count > 30) {
+            clearInterval(setTime);
+        }
+    }
+    function myStopFunction() {
+        clearInterval(setTime);
+    }
+    function myClearFunction() {
+        count = 1;
+    }
+    // счет от 30 до 1
+    
+    // var count = 30;
+    // var setTime;
+    // function myTimeoutFunction() {
+    //     document.getElementById("demo").innerHTML = count--;
+    //     setTime = setTimeout(myTimeoutFunction, 1000);
+    //     if (count < 1) {
+    //         clearInterval(setTime);
+    //     }
+    // }
+    // function myStopFunction() {
+    //     clearInterval(setTime);
+    // }
+    // function myClearFunction() {
+    //     count = 30;
+    // }
+    myTimeoutFunction() 
+    </script>
+</body>
+</html>
